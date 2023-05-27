@@ -120,4 +120,62 @@ echo $conta->getEmail();
 print "<br>";
 echo $conta->getSenha();
  */
-// Constructor
+
+
+
+/* // Constructor
+class Login {
+  public function __construct($email, $senha, $nome) {
+    $this->setEmail($email);
+    $this->setSenha($senha);
+    $this->nome = $nome;
+    return false;
+  }
+  private $email;
+  private $senha;
+  private $nome;
+
+  // geters
+  public function getEmail() {
+    return $this->email;
+  }
+  public function getSenha() {
+    return $this->senha;
+  }
+  public function getNome() {
+    return $this->nome;
+  }
+
+  // seters
+  public function setEmail($e) {
+    $email = filter_var($e, FILTER_SANITIZE_EMAIL);
+    $this->email = $email;
+  }
+  public function setSenha($e) {
+    $this->senha = $e;
+  }
+
+  public function logar() {
+    $validateEmail = $this->email === "teste@teste.com";
+    $validateSenha = $this->senha === 123456;
+    if ($validateEmail && $validateSenha) {
+      echo "Login efetuado com sucesso!<br>";
+      echo $this->welcome();
+    } else {
+      echo "<strong><h1>Algo deu errado \xF0\x9F\x98\x93</h1></strong><br>Tente novamente ou entre em contato com o suporte.<br>";
+    }
+  }
+
+
+  public function welcome() {
+    echo "<h1>Olá, $this->nome</h1><br>Fico feliz que esteja de volta!";
+  }
+}
+
+$logger = new Login("teste@teste.com", 1233456, "Rafael Gomes Xavier");
+$logger->logar();
+echo "<br>";
+echo $logger->getEmail();
+echo "<br>";
+echo $logger->getSenha();
+ */

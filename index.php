@@ -179,3 +179,51 @@ echo $logger->getEmail();
 echo "<br>";
 echo $logger->getSenha();
  */
+
+// Herança
+class Veiculo {
+  private $modelo;
+  private $cor;
+  private $ano;
+
+  public function mover() {
+  }
+  public function parar() {
+  }
+
+  public function setAttribute($modelo, $cor, $ano) {
+    $this->modelo = $modelo;
+    $this->cor = $cor;
+    $this->ano = $ano;
+  }
+
+  public function getModelo() {
+    return $this->modelo;
+  }
+  public function getCor() {
+    return $this->cor;
+  }
+  public function getAno() {
+    return $this->ano;
+  }
+
+  public function getAllAttributes() {
+    $obj = [
+      $this->modelo,
+      $this->cor,
+      $this->ano
+    ];
+    return $obj;
+  }
+}
+
+class Carro extends Veiculo {
+}
+
+$carro = new Carro();
+$carro->setAttribute('Toyota', 'Preto', '2025');
+$arr = $carro->getAllAttributes();
+
+foreach ($arr as $valor) {
+  echo "$valor<br>";
+}

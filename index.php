@@ -171,7 +171,6 @@ class Login {
     echo "<h1>Olá, $this->nome</h1><br>Fico feliz que esteja de volta!";
   }
 }
-
 $logger = new Login("teste@teste.com", 1233456, "Rafael Gomes Xavier");
 $logger->logar();
 echo "<br>";
@@ -180,7 +179,7 @@ echo "<br>";
 echo $logger->getSenha();
  */
 
-// Herança
+/* // Herança
 class Veiculo {
   private $modelo;
   private $cor;
@@ -216,14 +215,74 @@ class Veiculo {
     return $obj;
   }
 }
-
 class Carro extends Veiculo {
 }
-
 $carro = new Carro();
 $carro->setAttribute('Toyota', 'Preto', '2025');
-$arr = $carro->getAllAttributes();
 
-foreach ($arr as $valor) {
-  echo "$valor<br>";
+foreach ($carro->getAllAttributes() as $valor) {
+  echo "$valor <br>";
 }
+*/
+
+/* Public, Private, Protected 
+
+Protected
+ só podemos acessar ou módificar os atributos deste modelo dentro do escopo
+ da classe principal ou de classes que herdam da classe principal
+
+ 
+Private
+ só podemos acessar ou modificar os atributos deste tipo dentro do escopo da classe principal 
+
+
+
+Public
+ podemos acessar de qualquer lugar.
+ */
+
+
+abstract class Banco {
+  protected $saldo;
+  protected $limiteSaque;
+  protected $juros;
+
+  abstract protected function Sacar($saque);
+  abstract protected function Depositar($deposito);
+}
+class Itau extends Banco {
+  public function setSaldo($valor) {
+    return $this->saldo = $valor;
+  }
+
+  // get
+  public function getSaldo() {
+    $this->saldo = $this->saldo ?? 0;
+    echo "<hr>Saldo atual R$: $this->saldo ";
+  }
+
+  public function refreshSaldo($saldoAtual) {
+    $this->saldo = "$saldoAtual";
+    echo "<br>";
+    $this->getSaldo();
+  }
+
+  public function Sacar($saque) {
+    $this->saldo -= $saque;
+    $saldoAtual = $this->saldo;
+    echo "<hr>Foi realizado um saque no valor de R$: $saque em sua conta.";
+    $this->refreshSaldo($saldoAtual);
+  }
+  public function Depositar($deposito) {
+    $this->saldo += $deposito;
+    $saldoAtual = $this->saldo;
+
+    echo "<hr>O depósito de R$: $deposito já está disponivel em sua conta.";
+    $this->refreshSaldo($saldoAtual);
+  }
+}
+$itau = new Itau();
+$itau->getSaldo();
+$itau->Sacar(200);
+$itau->Sacar(200);
+$itau->Depositar(1000);

@@ -306,3 +306,54 @@ class Rodrigo extends Pessoa {
 $rodrigo = new Rodrigo();
 $rodrigo->eN();
  */
+
+
+
+
+/*  treino
+// sistema sisples de banco,
+// a pessoa pode sacar e depositar
+
+abstract class Banco {
+  protected $saldo;
+
+  abstract protected function Sacar($saque);
+  abstract protected function Depositar($deposito);
+}
+
+class Itau extends Banco {
+
+  public function getSaldo() {
+    $contentSaldo = $this->saldo = $this->saldo ?? 0;
+    return "Saldo atual R$: $contentSaldo";
+  }
+
+  public function handleSaldo($saldoAtual) {
+    $this->saldo = $saldoAtual;
+    echo "<br><br>";
+    echo $this->getSaldo();
+  }
+
+  public function Sacar($saque) {
+    $saldoAtual = $this->saldo -= $saque;
+    echo "<hr>Foi debitado R$ $saque de sua conta.";
+    $this->handleSaldo($saldoAtual);
+    return $this->getSaldo();
+  }
+
+  public function Depositar($deposito) {
+    $saldoAtual = $this->saldo += $deposito;
+    echo "<hr>Foi creditado em sua conta um valor de R$ $deposito.";
+    $this->handleSaldo($saldoAtual);
+    return $this->getSaldo();
+  }
+}
+
+$itau = new Itau();
+echo $itau->getSaldo();
+$itau->Depositar(100);
+$itau->Depositar(100);
+$itau->Sacar(50);
+$itau->Sacar(50);
+$itau->Sacar(50);
+ */

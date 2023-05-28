@@ -357,3 +357,41 @@ $itau->Sacar(50);
 $itau->Sacar(50);
 $itau->Sacar(50);
  */
+
+
+// statics methods and attributes
+// em metodos e atributos statics se usa o self ao invez de this.
+// para chamar, utilizar metodos e atributos statics usamos ::$
+// diferente quando estamos acessando a constante que não precisamos usar o $
+
+/* class Pessoa {
+  public static $user;
+
+  public static function verificarLogin() {
+    echo "O usuário " . self::$user . " está logado!";
+  }
+}
+Pessoa::$user = "admin";
+Pessoa::verificarLogin();
+ */
+/* 
+class Login {
+  public static $user;
+  public static function logar() {
+    echo "O usuário " . self::$user . " logou.";
+  }
+
+  public function Deslogar() {
+    echo "O usuário " . self::$user . " deslogou.";
+  }
+}
+
+$admin = new Login();
+
+$admin::$user = "Admin";
+// $admin::logar();
+$admin->Deslogar();
+ */
+
+
+ 

@@ -393,5 +393,24 @@ $admin::$user = "Admin";
 $admin->Deslogar();
  */
 
+/* 
+// Polimorfismo
+// Substituir ou reescrever um método da classe pai.
+class Animal {
+  public function Correr() {
+    echo "O animal correu";
+  }
+  public function Andar() {
+    echo "O animal andou.";
+  }
+}
 
- 
+class Cavalo extends Animal {
+  public function Andar() {
+    $this->Correr();
+  }
+}
+
+$animal = new Cavalo();
+$animal->Andar();
+ */

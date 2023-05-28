@@ -414,3 +414,34 @@ class Cavalo extends Animal {
 $animal = new Cavalo();
 $animal->Andar();
  */
+/* 
+// Todos os methodos da interface devem ser publicos
+// por padrão todos os methodos são abstratos
+// isso significa que eles dever aparecer na implementação da mesma forma que foram criados na inteface
+interface Crud {
+  public function Create($data);
+  public function Read();
+  public function Update();
+  public function Delete();
+}
+
+// diferente de extends que usamos em herança,
+// para instanciar uma classe de uma interface utilizamos o implements
+class Noticia implements Crud {
+
+  public function Create($data) {
+    //
+  }
+  public function Read() {
+    //
+  }
+  public function Update() {
+    //
+  }
+  public function Delete() {
+    //
+  }
+}
+ */
+
+ 

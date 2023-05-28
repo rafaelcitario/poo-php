@@ -240,8 +240,7 @@ Private
 Public
  podemos acessar de qualquer lugar.
  */
-
-
+/* 
 abstract class Banco {
   protected $saldo;
   protected $limiteSaque;
@@ -283,6 +282,27 @@ class Itau extends Banco {
 }
 $itau = new Itau();
 $itau->getSaldo();
-$itau->Sacar(200);
-$itau->Sacar(200);
-$itau->Depositar(1000);
+$itau->Sacar(450);
+$itau->Sacar(100);
+$itau->Depositar(650);
+ */
+
+// constantes, self e parent;
+/* class Pessoa {
+  const nome = "Rodrigo";
+
+  public function eN() {
+    echo self::nome;
+  }
+}
+class Rodrigo extends Pessoa {
+  const nome = "Oliveira";
+
+  public function eN() {
+    echo parent::nome;
+  }
+}
+
+$rodrigo = new Rodrigo();
+$rodrigo->eN();
+ */

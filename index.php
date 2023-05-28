@@ -458,3 +458,25 @@ $produto2 = new productModels();
 echo "<br>";
 $produto2->Detalhes();
  */
+
+/* // Referencia e clonagem de objetos
+class Pessoa {
+  public $idade;
+
+  public function __clone() {
+    echo "Este metodo é acionado assim que um objeto instaciado é clonado: ";
+  }
+}
+
+$pessoa = new Pessoa();
+$pessoa->idade = 25;
+
+$pessoa2 = clone $pessoa;
+$pessoa2->idade = 35;
+
+echo $pessoa2->idade;
+echo "<br>";
+echo $pessoa->idade;
+ */
+
+ 

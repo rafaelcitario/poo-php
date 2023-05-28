@@ -443,5 +443,18 @@ class Noticia implements Crud {
   }
 }
  */
+/* 
+// require em php não usa () ou =
+require 'classes/produtos.php';
+require 'models/produtos.php';
 
- 
+// não esquecer de adicionar a tag namespaces nos arquivos que estão sendo requiridos
+use models\Produtos as productModels;
+use classes\Produtos as productClass;
+
+$produto = new productClass();
+$produto->Detalhes();
+$produto2 = new productModels();
+echo "<br>";
+$produto2->Detalhes();
+ */

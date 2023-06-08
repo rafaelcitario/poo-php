@@ -561,4 +561,38 @@ try {
 } */
 
 
+/* 
+/** Associação
+ * associando uma instancia de classe a outra instancia de classe,
+ * dando acesso aos atributos e metodos.
+ * 
 
+
+class Pedido {
+  public $numero;
+  public $cliente;
+}
+
+class Cliente {
+  public $nome;
+  public $endereco;
+}
+
+$cliente = new Cliente();
+$cliente->nome = "Rafael Gomes";
+$cliente->endereco = "Rua da rua, na rua tal";
+
+$pedido = new Pedido();
+$pedido->numero = "123";
+$pedido->cliente = $cliente; // passando todos os dados de cliente para esta propriedade
+
+$dados = [
+  "numero" => $pedido->numero,
+  "nome" => $pedido->cliente->nome,
+  "endereco" => $pedido->cliente->endereco,
+];
+
+var_dump($dados);
+ */
+
+ 

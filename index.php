@@ -595,4 +595,54 @@ $dados = [
 var_dump($dados);
  */
 
- 
+
+/* /**
+ * Relação entre objetos (Agregação)
+
+// criando uma classe Produtos
+class Produtos {
+  public $name;
+  public $valor;
+
+  // quando essa classe for instanciada, atribuimos valor para estes parametros.
+  public function __construct($name, $valor) {
+    $this->name = $name;
+    $this->valor = $valor;
+  }
+}
+
+
+// criando a classe carrinho
+class Carrinho {
+  // produtos ira receber um valor
+  public $produtos;
+
+  // neste metodo passaremos como parametro um produto de instancia Produtos
+  public function adicionar(Produtos $produto) {
+    // Aqui definimos que produtos passa a ser um array que recebe a instancia de Produtos
+    $this->produtos[] = $produto;
+  }
+
+  // este metodo exibimos os produtos
+  public function exibir() {
+    //
+    foreach ($this->produtos as $produto) {
+      //
+      echo "<strong>$produto->name</strong> <br>";
+      echo "<strong> R$</strong> $produto->valor <hr>";
+    }
+  }
+}
+
+$notebook = new Produtos("Notebook", 6000);
+$celular = new Produtos("Celular", 2000);
+
+// conseguimos atribuir como parametro instancias de outras classes, retirando a tipagem Produtos do metodo adicionar
+// no entanto como estamos utilizando o foreach, precisamos que outras classes tenham os mesmos parametros
+// 
+$carrinho = new Carrinho();
+$carrinho->adicionar($notebook);
+$carrinho->adicionar($celular);
+
+$carrinho->exibir();
+ */

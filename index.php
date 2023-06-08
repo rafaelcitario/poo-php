@@ -479,4 +479,86 @@ echo "<br>";
 echo $pessoa->idade;
  */
 
- 
+
+// //treino
+// // sistema sisples de banco,
+// // a pessoa pode sacar e depositar
+
+// abstract class Banco {
+//   protected $saldo;
+
+//   abstract protected function Sacar($saque);
+//   abstract protected function Depositar($deposito);
+// }
+
+// class Itau extends Banco {
+
+//   public function getSaldo() {
+//     $contentSaldo = $this->saldo = $this->saldo ?? 0;
+//     return "Saldo atual R$: $contentSaldo";
+//   }
+
+//   public function handleSaldo($saldoAtual) {
+//     $this->saldo = $saldoAtual;
+//     echo "<br><br>";
+//     echo $this->getSaldo();
+//   }
+
+//   public function Sacar($saque) {
+//     $saldoAtual = $this->saldo -= $saque;
+//     echo "<hr>Foi debitado R$ $saque de sua conta.";
+//     $this->handleSaldo($saldoAtual);
+//     return $this->getSaldo();
+//   }
+
+//   public function Depositar($deposito) {
+//     $saldoAtual = $this->saldo += $deposito;
+//     echo "<hr>Foi creditado em sua conta um valor de R$ $deposito.";
+//     $this->handleSaldo($saldoAtual);
+//     return $this->getSaldo();
+//   }
+// }
+
+// $itau = new Itau();
+// echo $itau->getSaldo();
+// $itau->Depositar(100);
+// $itau->Depositar(100);
+// $itau->Sacar(50);
+// $itau->Sacar(50);
+// $itau->Sacar(50);
+
+
+/** Tratamento de Excessões
+ * Assim como o AppError utilizado no repositório do node
+ * Expeption é um metodo para tratamentos de erro
+ * 
+ * Para o tratamente e facil visualização do erro podemos usar
+ * message, code, file, line
+ */
+
+/* class Newsletter {
+
+  public function cadastrarEmail($email) {
+    // validando email
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      throw new Exception("Email invalido.", 1);
+    } else {
+      echo "Email cadastrado com sucesso.";
+    }
+  }
+}
+
+$newsletter = new Newsletter();
+try {
+
+  $newsletter->cadastrarEmail("rafael@");
+} catch (Exception $e) {
+
+  echo "<hr>" . $e->getMessage() .  "<strong> - Mensagem</strong>";
+  echo "<hr>" . $e->getCode() .  "<strong> - Código do erro(Eu que defino o erro)</strong>";
+  echo "<hr>" . $e->getFile() .  "<strong> - Mostra o diretório do arquivo que esta com erro</strong>";
+  echo "<hr>" . $e->getLine() .  "<strong> - Linha onde encontra-se o erro</strong>";
+} */
+
+
+
